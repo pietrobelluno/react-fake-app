@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class PostList extends Component{
 
@@ -9,7 +10,7 @@ class PostList extends Component{
             <li>
               <h2>{post.title}</h2>
               <p>{post.body}</p>
-              <button>Ver Detalhes</button>
+              <Link to={`/detail/${post.id}`}>Ver Detalhes</Link>
             </li>
           )}
       </ul>
