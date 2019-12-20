@@ -7,10 +7,15 @@ class PostList extends Component{
     return (
       <ul>
           {this.props.posts.map(post =>
+
             <li>
               <h2>{post.title}</h2>
               <p>{post.body}</p>
-              <Link to={`/detail/${post.id}`}>Ver Detalhes</Link>
+              <Link to={{pathname: `/detail/${post.id}`, state: post}} >Ver Detalhes</Link>
+              <br></br>
+              <Link to={{pathname: `/edit/${post.id}`, state: post}} >Editar</Link>
+              <br></br>
+              <button onClick={() => this.props.delete(post)}>Deletar</button>
             </li>
           )}
       </ul>
