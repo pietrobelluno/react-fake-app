@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+
+import { history } from '../../routes'
 
 class Edit extends Component {
 
@@ -29,6 +30,8 @@ class Edit extends Component {
 
   }
 
+  goHome = () => history.goBack('/', {...this.state})
+
 
   render() {
     return (
@@ -37,7 +40,7 @@ class Edit extends Component {
         <input type='text' onChange={e => this.setState({body: e.target.value})} placeholder='Edit the body'/>
         <button onClick={this.editPost}>editar</button>
 
-        <Link to={{pathname: '/', state: {...this.state, id: this.props.match.params.id }}} >go Home</Link>
+        <button onClick={this.goHome}>go home</button>
       </div>
     );
   }

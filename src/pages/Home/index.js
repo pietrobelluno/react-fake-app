@@ -16,37 +16,33 @@ class Home extends Component {
 
   checkParams = () => {
     const { state } = this.props.location
-    console.warn(state)
 
-    if (Object.entries(state).length === 0 && state.constructor === Object) return false
+    if (state) {
+      if (Object.entries(state).length === 0 && state.constructor === Object) return false
 
-    const { posts } = this.state
-    console.warn(this.state)
+      const { posts } = this.state
 
+      if (posts.length > 0) {
+        const newPosts = posts.map(post => {
+          if (post.id === parseInt(state.id)){
+            post = {
+              ...post,
+              body: state.body,
+              title: state.title
+            }
+          }
 
-    const newPosts = posts.map(post => {
+          return post
+        })
 
-      if (post.id === parseInt(state.id)){
-        console.warn('achou')
-        post = {
-          ...post,
-          body: state.body,
-          title: state.title
-        }
+        this.setState({posts: newPosts})
       }
-
-      return post
-    })
-
-    this.setState({posts: newPosts}, () => {
-      console.warn('setou')
-    })
+    }
   }
 
   deletePost = (forDeletePost) => {
     const { posts } = this.state
-    const newPosts = posts.filter(post => !(post.id == forDeletePost.id))
-    console.warn(newPosts)
+    const newPosts = posts.filter(post => post.id !== parseInt(forDeletePost.id))
 
     this.setState({posts: newPosts})
   }
