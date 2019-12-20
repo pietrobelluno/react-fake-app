@@ -1,4 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Fake App CRUD
+
+Desenvolver uma aplicação simples, totalmente focada na parte do front:
+
+Utilizando o JSONPlaceHolder, o candidato deverá criar uma pequena aplicação que:
+
+Como utilizar o JSONPlaceHolder: https://jsonplaceholder.typicode.com/guide.html
+
+O teste deverá ser feito utilizando obrigatoriamente React e Redux;
+
+Em resumo, o JSONPlaceHolder fornece uma api efêmera para realização de testes, para esse teste utilizaremos os endpoints /posts e /users
+
+- Renderizar uma listagem de posts: Desenvolver uma pequena listagem dos posts providos pela API, exibindo somente o título e o nome do autor.
+
+- Detalhar um post: Ao clicar sobre um post, a aplicação deverá detalhar o conteúdo do post.
+
+- Atualizar um post: A aplicação deverá ter um pequeno recurso de atualizar os dados de um post,
+
+- Apagar um post:  A aplicação deverá ter um botão para que seja feita a exclusão de um post;
 
 ## Available Scripts
 
@@ -11,11 +29,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
